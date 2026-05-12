@@ -1,0 +1,95 @@
+/*
+ * Feuille de styles pour la galerie photo dynamique.
+ * Le design utilise CSS Grid pour disposer les images de manière fluide
+ * et responsive. Les boutons de contrôle sont stylisés pour être modernes
+ * et accessibles. Des transitions douces offrent un retour visuel agréable
+ * lors du survol des images.
+ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.controls {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.controls button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.controls button:hover,
+.controls button:focus {
+  background: #0056b3;
+  outline: none;
+}
+
+.controls button:active {
+  transform: scale(0.97);
+}
+
+/* Galerie responsive utilisant CSS Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  /*
+   * Pour permettre un défilement automatique vertical,
+   * on fixe une hauteur et on active le débordement vertical.
+   * Si l'utilisateur désactive le défilement automatique,
+   * cette propriété est toujours utile pour scroller manuellement.
+   */
+  height: 500px;
+  overflow-y: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Effet au survol pour donner un sentiment de profondeur */
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Petites adaptations mobiles */
+@media (max-width: 600px) {
+  .controls button {
+    margin: 5px;
+    width: calc(100% - 20px);
+  }
+}
