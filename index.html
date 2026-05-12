@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie Photo Dynamique</title>
+  !--
+    Cette page HTML constitue la base de l'application de visualisation d'images.
+    Elle référence une feuille de style externe et un script JavaScript pour le comportement.
+    L'interface est volontairement simple : un titre, deux boutons pour manipuler
+    l'affichage des photos et un conteneur qui accueillera les images.
+  -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Galerie Photo Dynamique</h1>
+  </header>
+  <div class="controls">
+    <button id="filterBtn">Filtre aléatoire</button>
+    <button id="shuffleBtn">Mélanger images</button>
+    <!-- Bouton pour activer/désactiver le défilement automatique -->
+    <button id="scrollBtn">Activer défilement</button>
+  </div>
+  <div id="gallery" class="gallery">
+    <!-- Les images sont injectées dynamiquement par JavaScript -->
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
